@@ -1,0 +1,15 @@
+{
+  "name": "autobots",
+  "version": "1.0.0",
+  "description": "A framework for giving anyone's LLM Bots access to your server code!",
+  "author": "cfortuner",
+  "type": "module",
+  "dependencies": {
+    "node-fetch": "^3.3.0",
+    "zod": "^3.20.2",
+    "zustand": "^4.1.5"
+  },
+  "scripts": {
+    "start": "node ./index.js"
+  }
+}
