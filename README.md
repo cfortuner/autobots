@@ -13,7 +13,7 @@ Entrypoint is index.js
 ## key ideas
 - client.mjs represents a client that a application might publish
 - server is the application's server which exposes it's api 
-- 
+- bot.mjs is the logic to run the bot.
 
 
 
