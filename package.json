@@ -5,7 +5,10 @@
   "author": "cfortuner",
   "type": "module",
   "dependencies": {
+    "axios": "^1.2.2",
+    "dotenv": "^16.0.3",
     "node-fetch": "^3.3.0",
+    "openai": "^3.1.0",
     "zod": "^3.20.2",
     "zustand": "^4.1.5"
   },

@@ -1,4 +1,4 @@
-import { create } from "zustand";
+import create from "zustand/vanilla";
 
 class API {
   static searchFlights = async () => {};
@@ -10,35 +10,44 @@ import z from "zod";
 export const actions = {
   updateFlights: {
     type: "updateFlights",
-    payload: z.undefined(),
+    payload: null,
   },
   searchFlights: {
     type: "searchFlights",
-    payload: z.object({
-      query: z.string(),
-    }),
+    payload: {
+      query: "from: SFO to: LAX",
+    },
+  },
+  selectFlight: {
+    type: "selectFlight",
+    payload: {
+      flightId: "askldjfagasld",
+    },
   },
   bookFlight: {
     type: "bookFlight",
-    payload: z.object({
-      flightId: z.string(),
-    }),
+    payload: {
+      flightId: "asldfalksjdf",
+    },
   },
 };
 
 const reducer = async (state, action) => {
   const payload = action.payload;
   switch (action.type) {
-    case Action.updateFlights:
+    case actions.updateFlights:
       await API.updateFlights(payload);
       set({ flights });
       return flights;
       break;
-    case Action.searchFlights:
+    case actions.searchFlights:
       const flights = await API.searchFlights(payload);
       set({ flights });
       return flights;
-    case Action.bookFlight:
+    case actions.selectFlight:
+      set({ selectedFlight: payload.flightId });
+      return flights;
+    case actions.bookFlight:
       return await API.bookFlight(state.selectedFlight);
     default:
       break;
